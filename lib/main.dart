@@ -7,17 +7,14 @@ import 'package:weather_app_clean_bloc/features/feature_weather/presentation/blo
 import 'package:weather_app_clean_bloc/locator.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() async{
+void main() async {
   // init locator
   await setup();
-  runApp( MaterialApp(
+  runApp(MaterialApp(
     theme: ThemeData.dark().copyWith(),
     debugShowCheckedModeBanner: false,
-    home: MultiBlocProvider(
-             providers: [
-               BlocProvider(create: (_)=>locator<HomeBloc>()),
-             ],
-        child: MainWrapper()),
+    home: MultiBlocProvider(providers: [
+      BlocProvider(create: (_) => locator<HomeBloc>()),
+    ], child: MainWrapper()),
   ));
 }
-

@@ -43,6 +43,8 @@ dependencies:
   intl:
   loading_animation_widget:
   google_fonts:
+  smooth_page_indicator:
+  flutter_typeahead:
 
 dev_dependencies:
   flutter_test:
