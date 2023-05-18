@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:weather_app_clean_bloc/core/params/forecast_params.dart';
 import 'package:weather_app_clean_bloc/core/widgets/app_background.dart';
 import 'package:weather_app_clean_bloc/core/widgets/dot_loading_widget.dart';
 import 'package:weather_app_clean_bloc/features/feature_weather/domain/usecases/get_suggestion_city_usecase.dart';
-
 import 'package:weather_app_clean_bloc/features/feature_weather/presentation/bloc/cw_status.dart';
 import 'package:weather_app_clean_bloc/features/feature_weather/presentation/bloc/fw_status.dart';
 import 'package:weather_app_clean_bloc/features/feature_weather/presentation/bloc/home_bloc.dart';
@@ -45,9 +45,9 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: he*0.005,),
+          SizedBox(height: 1.h,),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: wi*0.03),
+            padding: EdgeInsets.symmetric(horizontal: 3.w),
             child: TypeAheadField(
               textFieldConfiguration: TextFieldConfiguration(
                 onSubmitted: (String prefix){
@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 controller: textEditingController,
                 style: DefaultTextStyle.of(context).style.copyWith(
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   color: Colors.white,
                 ),
                 decoration: const InputDecoration(
@@ -123,10 +123,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: ListView(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: he * 0.01),
+                    padding: EdgeInsets.only(top: 1.h),
                     child: SizedBox(
-                      width: wi,
-                      height: he *0.47,
+                      width: 100.w,
+                      height: 46.h,
                       child: PageView.builder(
                           physics: const AlwaysScrollableScrollPhysics(),
                           allowImplicitScrolling: true,
@@ -137,35 +137,35 @@ class _HomeScreenState extends State<HomeScreen> {
                               return Column(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.only(top: 50.0),
+                                    padding:  EdgeInsets.only(top: 2.h),
                                     child: Text(
                                       currentCityEntity.name.toString(),
                                       style: GoogleFonts.mcLaren(fontSize: 36),
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(top: 20.0),
+                                    padding:  EdgeInsets.only(top: 1.5.h),
                                     child: Text(
                                       currentCityEntity
                                           .weather![0].description!,
-                                      style: GoogleFonts.mcLaren(fontSize: 20),
+                                      style: GoogleFonts.mcLaren(fontSize: 12.sp),
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(top: 20),
+                                    padding: EdgeInsets.only(top: 1.5.h),
                                     child: AppBackground.setIconForMain(
                                         currentCityEntity
                                             .weather![0].description!),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(top: 20.0),
+                                    padding: EdgeInsets.only(top: 1.5.h),
                                     child: Text(
                                       '${currentCityEntity.main!.temp!.round().toString()}\u00B0',
-                                      style: GoogleFonts.mcLaren(fontSize: 56),
+                                      style: GoogleFonts.mcLaren(fontSize: 45.sp),
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 20,
+                                   SizedBox(
+                                    height: 1.5.h,
                                   ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -204,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               );
                             } else {
                               return Container(
-                                color: const Color(0xFFE7D87C),
+                                color: const Color(0x26E7D87C),
                               );
                             }
                           }),
@@ -231,7 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   // divider
                   Padding(
-                    padding: const EdgeInsets.only(top: 30),
+                    padding: EdgeInsets.only(top: 3.h),
                     child: Container(
                       color: Colors.white24,
                       height: 2,
@@ -240,12 +240,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   // forecast weather 7 days
                   Padding(
-                    padding: const EdgeInsets.only(top: 15),
+                    padding:  EdgeInsets.only(top: 1.h),
                     child: SizedBox(
                       width: double.infinity,
-                      height: he*0.11,
+                      height: 12.h,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
+                        padding: EdgeInsets.only(left: 1.w),
                         child: Center(
                           child: BlocBuilder<HomeBloc, HomeState>(
                             buildWhen: (previous, current) {
@@ -294,7 +294,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   // divider
                   Padding(
-                    padding: EdgeInsets.only(top: 15),
+                    padding: EdgeInsets.only(top: 1.5.h),
                     child: Container(
                       color: Colors.white24,
                       height: 2,
@@ -302,7 +302,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                    SizedBox(
-                    height: he*0.01,
+                    height: 1.h,
                   ),
                   // last row
                   Row(
@@ -314,16 +314,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             "wind speed",
                             style: TextStyle(
-                              fontSize: he * 0.017,
+                              fontSize: 10.sp,
                               color: Colors.amber,
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 10.0),
+                            padding: EdgeInsets.only(top: 2.h),
                             child: Text(
                               "${currentCityEntity.wind!.speed!} m/s",
                               style: TextStyle(
-                                fontSize: he * 0.016,
+                                fontSize: 10.sp,
                                 color: Colors.white,
                               ),
                             ),
@@ -331,7 +331,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 2.w),
                         child: Container(
                           color: Colors.white54,
                           height: 30,
@@ -339,27 +339,27 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10),
+                        padding:  EdgeInsets.only(left: 2.w),
                         child: Column(
                           children: [
                             Text(
                               'sunrise',
                               style: TextStyle(
-                                  fontSize: he * 0.017, color: Colors.amber),
+                                  fontSize: 10.sp, color: Colors.amber),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 10.0),
+                              padding: EdgeInsets.only(top: 2.h),
                               child: Text(
                                 sunrise,
                                 style: TextStyle(
-                                    fontSize: he * 0.016, color: Colors.white),
+                                    fontSize: 10.sp, color: Colors.white),
                               ),
                             ),
                           ],
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 2.w),
                         child: Container(
                           color: Colors.white24,
                           height: 30,
@@ -367,27 +367,27 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 2.w),
                         child: Column(
                           children: [
                             Text(
                               'sunset',
                               style: TextStyle(
-                                  fontSize: he * 0.017, color: Colors.amber),
+                                  fontSize: 10.sp, color: Colors.amber),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 10.0),
+                              padding:  EdgeInsets.only(top: 2.h),
                               child: Text(
                                 sunset,
                                 style: TextStyle(
-                                    fontSize: he * 0.016, color: Colors.white),
+                                    fontSize: 10.sp, color: Colors.white),
                               ),
                             ),
                           ],
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 2.h),
                         child: Container(
                           color: Colors.white24,
                           height: 30,
@@ -395,22 +395,22 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
+                        padding: EdgeInsets.only(left:2.h),
                         child: Column(
                           children: [
                             Text(
                               "humidity",
                               style: TextStyle(
-                                fontSize: he * 0.017,
+                                fontSize: 10.sp,
                                 color: Colors.amber,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 10.0),
+                              padding:  EdgeInsets.only(top: 2.h),
                               child: Text(
                                 "${currentCityEntity.main!.humidity!}%",
                                 style: TextStyle(
-                                  fontSize: he * 0.016,
+                                  fontSize: 10.sp,
                                   color: Colors.white,
                                 ),
                               ),

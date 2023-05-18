@@ -45,6 +45,7 @@ dependencies:
   google_fonts:
   smooth_page_indicator:
   flutter_typeahead:
+  sizer:
 
 dev_dependencies:
   flutter_test:
