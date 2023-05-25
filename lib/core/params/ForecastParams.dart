@@ -1,3 +1,4 @@
+
 class ForecastParams{
   double lat;
   double lon;

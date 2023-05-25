@@ -1,20 +1,22 @@
 
 import 'package:equatable/equatable.dart';
-import 'package:weather_app_clean_bloc/features/feature_weather/domain/entities/current_city_entity.dart';
-import 'package:weather_app_clean_bloc/features/feature_weather/domain/entities/forecase_days_entity.dart';
+import 'package:flutter/material.dart';
 
-abstract class FwStatus extends Equatable{}
-// loading state
+import '../../domain/entities/forecase_days_entity.dart';
+
+@immutable
+abstract class FwStatus extends Equatable {}
+
+/// loading state
 class FwLoading extends FwStatus{
   @override
   // TODO: implement props
   List<Object?> get props => [];
 }
-// loaded state
+
+/// loaded state
 class FwCompleted extends FwStatus{
-
-  final ForecastDaysEntity forecastDaysEntity ;
-
+  final ForecastDaysEntity forecastDaysEntity;
   FwCompleted(this.forecastDaysEntity);
 
   @override
@@ -22,9 +24,9 @@ class FwCompleted extends FwStatus{
   List<Object?> get props => [forecastDaysEntity];
 }
 
+/// error state
 class FwError extends FwStatus{
-  final String message;
-
+  final String? message;
   FwError(this.message);
 
   @override

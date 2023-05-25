@@ -4,9 +4,7 @@ class HomeState extends Equatable{
   final CwStatus cwStatus;
   final FwStatus fwStatus;
 
-  HomeState({required this.cwStatus,
-    required this.fwStatus
-  });
+  const HomeState({required this.cwStatus, required this.fwStatus});
 
   HomeState copyWith({
     CwStatus? newCwStatus,
@@ -24,7 +22,4 @@ class HomeState extends Equatable{
     cwStatus,
     fwStatus
   ];
-
-
-
 }

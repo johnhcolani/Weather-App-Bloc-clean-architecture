@@ -5,6 +5,8 @@ import 'package:weather_app_clean_bloc/locator.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
+import 'features/feature_bookmark/presentation/bloc/bookmark_bloc.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // init locator
@@ -18,6 +20,7 @@ void main() async {
             debugShowCheckedModeBanner: false,
             home: MultiBlocProvider(providers: [
               BlocProvider(create: (_) => locator<HomeBloc>()),
+              BlocProvider(create: (_) => locator<BookmarkBloc>()),
             ], child: MainWrapper()),
           );
 

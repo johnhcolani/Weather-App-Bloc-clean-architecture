@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
 
 import '../../../../core/utils/date_converter.dart';
 import '../../../../core/widgets/app_background.dart';
-import '../../data/models/forecast_day_model.dart';
+import '../../data/models/ForcastDaysModel.dart';
 
 class DaysWeatherView extends StatefulWidget {
   final Daily daily;
@@ -20,7 +20,7 @@ class _DaysWeatherViewState extends State<DaysWeatherView> with SingleTickerProv
 
   @override
   void initState() {
-
+    // TODO: implement initState
     super.initState();
 
     animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 300));
@@ -47,24 +47,24 @@ class _DaysWeatherViewState extends State<DaysWeatherView> with SingleTickerProv
               color: Colors.transparent,
               elevation: 0,
               child: SizedBox(
-                width: 50,
-                height: 50,
-                child: Column(
-                  children: [
-                    Text(DateConverter.changeDtToDateTime(widget.daily.dt),
-                      style: const TextStyle(fontSize: 12, color: Colors.grey),),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 5.0),
-                      child: AppBackground.setIconForMain(widget.daily.weather![0].description),),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 5.0),
-                        child: Text(
-                          "${widget.daily.temp!.day!.round()}\u00B0",
-                          style: const TextStyle(fontSize: 15, color: Colors.white),),
-                      ),),
-                  ],
-                ),),
+                  width: 50,
+                  height: 50,
+                  child: Column(
+                    children: [
+                      Text(DateConverter.changeDtToDateTime(widget.daily.dt),
+                          style: const TextStyle(fontSize: 12, color: Colors.grey),),
+                      Padding(
+                          padding: const EdgeInsets.only(top: 5.0),
+                          child: AppBackground.setIconForMain(widget.daily.weather![0].description),),
+                      Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 5.0),
+                            child: Text(
+                                "${widget.daily.temp!.day!.round()}\u00B0",
+                                style: const TextStyle(fontSize: 15, color: Colors.white),),
+                          ),),
+                    ],
+                  ),),
             ),
           ),
         );

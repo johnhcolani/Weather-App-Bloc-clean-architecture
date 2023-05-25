@@ -11,20 +11,20 @@ import '../../domain/entities/forecase_days_entity.dart';
 
 class ForecastDaysModel extends ForecastDaysEntity{
   ForecastDaysModel({
-    double? lat,
-    double? lon,
-    String? timezone,
-    int? timezoneOffset,
-    Current? current,
-    List<Daily>? daily,
-    List<Alerts>? alerts,}) : super(
-      lat: lat,
-      lon: lon,
-      timezone: timezone,
-      timezoneOffset: timezoneOffset,
-      current: current,
-      daily: daily,
-      alerts: alerts
+      double? lat, 
+      double? lon, 
+      String? timezone, 
+      int? timezoneOffset, 
+      Current? current, 
+      List<Daily>? daily, 
+      List<Alerts>? alerts,}) : super(
+    lat: lat,
+    lon: lon,
+    timezone: timezone,
+    timezoneOffset: timezoneOffset,
+    current: current,
+    daily: daily,
+    alerts: alerts
   );
 
   factory ForecastDaysModel.fromJson(dynamic json) {
@@ -46,13 +46,13 @@ class ForecastDaysModel extends ForecastDaysEntity{
     }
 
     return ForecastDaysModel(
-        lat: json['lat'].toDouble(),
-        lon: json['lon'].toDouble(),
-        timezone: json['timezone'],
-        timezoneOffset: json['timezone_offset'],
-        current: json['current'] != null ? Current.fromJson(json['current']) : null,
-        daily: daily,
-        alerts: alerts
+      lat: json['lat'].toDouble(),
+      lon: json['lon'].toDouble(),
+      timezone: json['timezone'],
+      timezoneOffset: json['timezone_offset'],
+      current: json['current'] != null ? Current.fromJson(json['current']) : null,
+      daily: daily,
+      alerts: alerts
     );
 
 
@@ -69,19 +69,19 @@ class ForecastDaysModel extends ForecastDaysEntity{
 
 class Alerts {
   Alerts({
-    String? senderName,
-    String? event,
-    int? start,
-    int? end,
-    String? description,
-    List<String>? tags,}){
+      String? senderName, 
+      String? event, 
+      int? start, 
+      int? end, 
+      String? description, 
+      List<String>? tags,}){
     _senderName = senderName;
     _event = event;
     _start = start;
     _end = end;
     _description = description;
     _tags = tags;
-  }
+}
 
   Alerts.fromJson(dynamic json) {
     _senderName = json['sender_name'];
@@ -140,25 +140,25 @@ class Alerts {
 
 class Daily {
   Daily({
-    int? dt,
-    int? sunrise,
-    int? sunset,
-    int? moonrise,
-    int? moonset,
-    double? moonPhase,
-    Temp? temp,
-    Feels_like? feelsLike,
-    int? pressure,
-    int? humidity,
-    double? dewPoint,
-    double? windSpeed,
-    int? windDeg,
-    double? windGust,
-    List<Weather>? weather,
-    int? clouds,
-    double? pop,
-    double? rain,
-    double? uvi,}){
+      int? dt,
+      int? sunrise,
+      int? sunset,
+      int? moonrise, 
+      int? moonset, 
+      double? moonPhase, 
+      Temp? temp, 
+      Feels_like? feelsLike, 
+      int? pressure, 
+      int? humidity, 
+      double? dewPoint, 
+      double? windSpeed, 
+      int? windDeg, 
+      double? windGust, 
+      List<Weather>? weather, 
+      int? clouds, 
+      double? pop, 
+      double? rain, 
+      double? uvi,}){
     _dt = dt;
     _sunrise = sunrise;
     _sunset = sunset;
@@ -178,7 +178,7 @@ class Daily {
     _pop = pop;
     _rain = rain;
     _uvi = uvi;
-  }
+}
 
   Daily.fromJson(dynamic json) {
     _dt = json['dt'];
@@ -288,15 +288,15 @@ class Daily {
 
 class Weather {
   Weather({
-    int? id,
-    String? main,
-    String? description,
-    String? icon,}){
+      int? id, 
+      String? main, 
+      String? description, 
+      String? icon,}){
     _id = id;
     _main = main;
     _description = description;
     _icon = icon;
-  }
+}
 
   Weather.fromJson(dynamic json) {
     _id = json['id'];
@@ -332,15 +332,15 @@ class Weather {
 
 class Feels_like {
   Feels_like({
-    double? day,
-    double? night,
-    double? eve,
-    double? morn,}){
+      double? day, 
+      double? night, 
+      double? eve, 
+      double? morn,}){
     _day = day;
     _night = night;
     _eve = eve;
     _morn = morn;
-  }
+}
 
   Feels_like.fromJson(dynamic json) {
     _day = json['day'].toDouble();
@@ -378,19 +378,19 @@ class Feels_like {
 
 class Temp {
   Temp({
-    double? day,
-    double? min,
-    double? max,
-    double? night,
-    double? eve,
-    double? morn,}){
+      double? day, 
+      double? min, 
+      double? max, 
+      double? night, 
+      double? eve, 
+      double? morn,}){
     _day = day;
     _min = min;
     _max = max;
     _night = night;
     _eve = eve;
     _morn = morn;
-  }
+}
 
   Temp.fromJson(dynamic json) {
     _day = json['day'].toDouble();
@@ -445,21 +445,21 @@ class Temp {
 
 class Current {
   Current({
-    int? dt,
-    int? sunrise,
-    int? sunset,
-    double? temp,
-    double? feelsLike,
-    int? pressure,
-    int? humidity,
-    double? dewPoint,
-    double? uvi,
-    int? clouds,
-    int? visibility,
-    double? windSpeed,
-    int? windDeg,
-    double? windGust,
-    List<Weather>? weather,}){
+      int? dt,
+      int? sunrise,
+      int? sunset,
+      double? temp, 
+      double? feelsLike, 
+      int? pressure, 
+      int? humidity, 
+      double? dewPoint, 
+      double? uvi, 
+      int? clouds, 
+      int? visibility, 
+      double? windSpeed, 
+      int? windDeg, 
+      double? windGust, 
+      List<Weather>? weather,}){
     _dt = dt;
     _sunrise = sunrise;
     _sunset = sunset;
@@ -475,7 +475,7 @@ class Current {
     _windDeg = windDeg;
     _windGust = windGust;
     _weather = weather;
-  }
+}
 
   Current.fromJson(dynamic json) {
     _dt = json['dt'];
