@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:weather_app_clean_bloc/core/widgets/app_background.dart';
 import 'package:weather_app_clean_bloc/core/widgets/bottom_nav.dart';
 import 'package:weather_app_clean_bloc/features/feature_bookmark/presentation/screens/bookmark_screen.dart';
@@ -15,7 +16,9 @@ class MainWrapper extends StatelessWidget {
       const BookmarkScreen(),
     ];
     double he= MediaQuery.of(context).size.height;
-    return Scaffold(
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.light,
+        child: Scaffold(
       extendBody: true,
       bottomNavigationBar: BottomNav(controller: pageController,),
       body: Container(
@@ -31,6 +34,7 @@ class MainWrapper extends StatelessWidget {
           children: pageViewWidget,
         ),
       ),
+        ),
     );
   }
 }

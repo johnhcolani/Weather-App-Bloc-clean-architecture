@@ -1,5 +1,6 @@
 
 import 'package:get_it/get_it.dart';
+import 'package:weather_app_clean_bloc/features/feature_bookmark/data/data_sourse/local/database.dart';
 import 'package:weather_app_clean_bloc/features/feature_weather/data/data_sourse/remote/api_provider.dart';
 import 'package:weather_app_clean_bloc/features/feature_weather/data/repository/weatherRepositoryImpl.dart';
 import 'package:weather_app_clean_bloc/features/feature_weather/domain/repository/weather_repository.dart';
@@ -8,8 +9,11 @@ import 'package:weather_app_clean_bloc/features/feature_weather/domain/usecases/
 import 'package:weather_app_clean_bloc/features/feature_weather/presentation/bloc/home_bloc.dart';
 
 GetIt locator = GetIt.instance;
-setup(){
+setup() async {
   locator.registerSingleton<ApiProvider>(ApiProvider());
+
+  final database = await $FloorAppDatabase.databaseBuilder('app_database.db').build();
+  locator.registerSingleton<AppDatabase>(database);
   // repository
   locator.registerSingleton<WeatherRepository>(WeatherRepositoryImpl(locator()));
   // use case
