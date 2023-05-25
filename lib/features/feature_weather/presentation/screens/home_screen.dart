@@ -300,7 +300,7 @@ class _HomeScreenState extends State<HomeScreen>
                             );
                           } else {
                             return Container(
-                              color: Colors.amber,
+                              color: Colors.white.withOpacity(0.1),
                             );
                           }
                         },

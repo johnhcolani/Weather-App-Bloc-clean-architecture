@@ -84,7 +84,7 @@ class BookMarkScreen extends StatelessWidget {
                               child: ClipRect(
                                 child: BackdropFilter(
                                   filter: ImageFilter.blur(
-                                      sigmaX: 5.0, sigmaY: 5.0),
+                                      sigmaX: 7.0, sigmaY: 7.0),
                                   child: Container(
                                     width: width,
                                     height: 60.0,
@@ -92,7 +92,7 @@ class BookMarkScreen extends StatelessWidget {
                                         borderRadius: const BorderRadius.all(
                                             Radius.circular(20)),
                                         color:
-                                        Colors.grey.withOpacity(0.1)),
+                                        Colors.grey.withOpacity(0.2)),
                                     child: Padding(
                                       padding:
                                       const EdgeInsets.only(left: 20.0),
@@ -113,7 +113,7 @@ class BookMarkScreen extends StatelessWidget {
                                               },
                                               icon: const Icon(
                                                 Icons.delete,
-                                                color: Colors.redAccent,
+                                                color: Colors.amber,
                                               )),
                                         ],
                                       ),
