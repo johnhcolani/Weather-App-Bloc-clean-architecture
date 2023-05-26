@@ -52,7 +52,7 @@ class _DaysWeatherViewState extends State<DaysWeatherView> with SingleTickerProv
                   child: Column(
                     children: [
                       Text(DateConverter.changeDtToDateTime(widget.daily.dt),
-                          style: const TextStyle(fontSize: 12, color: Colors.grey),),
+                          style: TextStyle(fontSize: 12, color: Colors.amber.shade200),),
                       Padding(
                           padding: const EdgeInsets.only(top: 5.0),
                           child: AppBackground.setIconForMain(widget.daily.weather![0].description),),

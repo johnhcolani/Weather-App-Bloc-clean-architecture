@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
+import 'package:sizer/sizer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
@@ -36,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen>
   GetSuggestionCityUseCase getSuggestionCityUseCase =
       GetSuggestionCityUseCase(locator());
 
-  String cityName = "Tehran";
+  String cityName = "Richmond";
   final PageController _pageController = PageController();
 
   @override
@@ -187,10 +188,10 @@ class _HomeScreenState extends State<HomeScreen>
                   child: ListView(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: height * 0.02),
+                    padding: EdgeInsets.only(top: 1.h),
                     child: SizedBox(
                       width: width,
-                      height: 400,
+                      height: 43.h,
                       child: PageView.builder(
                         physics: const AlwaysScrollableScrollPhysics(),
                         allowImplicitScrolling: true,
@@ -201,37 +202,37 @@ class _HomeScreenState extends State<HomeScreen>
                             return Column(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 50),
+                                  padding:  EdgeInsets.only(top: 3.h),
                                   child: Text(
                                     currentCityEntity.name!,
-                                    style: const TextStyle(
-                                        fontSize: 30, color: Colors.white),
+                                    style:  TextStyle(
+                                        fontSize: 30.sp, color: Colors.white),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 20),
+                                  padding: EdgeInsets.only(top: 2.h),
                                   child: Text(
                                     currentCityEntity.weather![0].description!,
-                                    style: const TextStyle(
-                                        fontSize: 20, color: Colors.grey),
+                                    style: TextStyle(
+                                        fontSize: 15.sp, color: Colors.amber.shade200),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 20),
+                                  padding:  EdgeInsets.only(top: 2.h),
                                   child: AppBackground.setIconForMain(
                                       currentCityEntity
                                           .weather![0].description!),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 20),
+                                  padding: EdgeInsets.only(top: 2.h),
                                   child: Text(
                                     "${currentCityEntity.main!.temp!.round()}\u00B0",
-                                    style: const TextStyle(
-                                        fontSize: 50, color: Colors.white),
+                                    style:  TextStyle(
+                                        fontSize: 45.sp, color: Colors.white),
                                   ),
                                 ),
-                                const SizedBox(
-                                  height: 20,
+                                 SizedBox(
+                                  height: 2.h,
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -239,20 +240,20 @@ class _HomeScreenState extends State<HomeScreen>
                                     /// max temp
                                     Column(
                                       children: [
-                                        const Text(
+                                        Text(
                                           "max",
                                           style: TextStyle(
-                                            fontSize: 16,
-                                            color: Colors.grey,
+                                            fontSize: 13.sp,
+                                            color: Colors.amber.shade200,
                                           ),
                                         ),
-                                        const SizedBox(
-                                          height: 10,
+                                         SizedBox(
+                                          height: 1.h,
                                         ),
                                         Text(
                                           "${currentCityEntity.main!.tempMax!.round()}\u00B0",
-                                          style: const TextStyle(
-                                            fontSize: 16,
+                                          style: TextStyle(
+                                            fontSize: 13.sp,
                                             color: Colors.white,
                                           ),
                                         )
@@ -261,34 +262,34 @@ class _HomeScreenState extends State<HomeScreen>
 
                                     /// divider
                                     Padding(
-                                      padding: const EdgeInsets.only(
-                                        left: 10.0,
-                                        right: 10,
+                                      padding:  EdgeInsets.only(
+                                        left: 2.w,
+                                        right: 2.w,
                                       ),
                                       child: Container(
                                         color: Colors.grey,
-                                        width: 2,
-                                        height: 40,
+                                        width: 0.5.w,
+                                        height: 4.h,
                                       ),
                                     ),
 
                                     /// min temp
                                     Column(
                                       children: [
-                                        const Text(
+                                         Text(
                                           "min",
                                           style: TextStyle(
-                                            fontSize: 16,
-                                            color: Colors.grey,
+                                            fontSize: 13.sp,
+                                            color: Colors.amber.shade200,
                                           ),
                                         ),
-                                        const SizedBox(
-                                          height: 10,
+                                         SizedBox(
+                                          height: 1.h,
                                         ),
                                         Text(
                                           "${currentCityEntity.main!.tempMin!.round()}\u00B0",
-                                          style: const TextStyle(
-                                            fontSize: 16,
+                                          style:  TextStyle(
+                                            fontSize: 13.sp,
                                             color: Colors.white,
                                           ),
                                         )
@@ -318,9 +319,9 @@ class _HomeScreenState extends State<HomeScreen>
                       controller: _pageController,
                       // PageController
                       count: 2,
-                      effect: const ExpandingDotsEffect(
-                        dotWidth: 10,
-                        dotHeight: 10,
+                      effect:  ExpandingDotsEffect(
+                        dotWidth: 3.w,
+                        dotHeight: 1.h,
                         spacing: 5,
                         activeDotColor: Colors.white,
                       ),
@@ -335,22 +336,22 @@ class _HomeScreenState extends State<HomeScreen>
 
                   /// divider
                   Padding(
-                    padding: const EdgeInsets.only(top: 30),
+                    padding:  EdgeInsets.only(top: 3.h),
                     child: Container(
                       color: Colors.white24,
-                      height: 2,
+                      height: 0.2.h,
                       width: double.infinity,
                     ),
                   ),
 
                   /// forecast weather 7 days
                   Padding(
-                    padding: const EdgeInsets.only(top: 15),
+                    padding:  EdgeInsets.only(top: 2.h),
                     child: SizedBox(
                       width: double.infinity,
-                      height: 100,
+                      height: 12.h,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
+                        padding: EdgeInsets.only(left: 1.h),
                         child: Center(
                           child: BlocBuilder<HomeBloc, HomeState>(
                             builder: (BuildContext context, state) {
@@ -404,15 +405,15 @@ class _HomeScreenState extends State<HomeScreen>
 
                   /// divider
                   Padding(
-                    padding: const EdgeInsets.only(top: 15),
+                    padding:  EdgeInsets.only(top: 1.h),
                     child: Container(
                       color: Colors.white24,
-                      height: 2,
+                      height: 0.2.h,
                       width: double.infinity,
                     ),
                   ),
 
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
 
@@ -425,16 +426,16 @@ class _HomeScreenState extends State<HomeScreen>
                           Text(
                             "wind speed",
                             style: TextStyle(
-                              fontSize: height * 0.017,
-                              color: Colors.amber,
+                              fontSize: 10.sp,
+                              color: Colors.amber.shade200,
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 10.0),
+                            padding:  EdgeInsets.only(top: 2.h),
                             child: Text(
                               "${currentCityEntity.wind!.speed!} m/s",
                               style: TextStyle(
-                                fontSize: height * 0.016,
+                                fontSize: 10.sp,
                                 color: Colors.white,
                               ),
                             ),
@@ -442,30 +443,30 @@ class _HomeScreenState extends State<HomeScreen>
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10),
+                        padding:  EdgeInsets.only(left: 2.w),
                         child: Container(
                           color: Colors.white24,
-                          height: 30,
-                          width: 2,
+                          height: 4.h,
+                          width: 0.5.w,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
+                        padding:  EdgeInsets.only(left: 2.w),
                         child: Column(
                           children: [
                             Text(
                               "sunrise",
                               style: TextStyle(
-                                fontSize: height * 0.017,
-                                color: Colors.amber,
+                                fontSize: 10.sp,
+                                color: Colors.amber.shade200,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 10.0),
+                              padding: EdgeInsets.only(top: 2.h),
                               child: Text(
                                 sunrise,
                                 style: TextStyle(
-                                  fontSize: height * 0.016,
+                                  fontSize: 10.sp,
                                   color: Colors.white,
                                 ),
                               ),
@@ -474,30 +475,30 @@ class _HomeScreenState extends State<HomeScreen>
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10),
+                        padding:  EdgeInsets.only(left: 2.w),
                         child: Container(
                           color: Colors.white24,
-                          height: 30,
-                          width: 2,
+                          height: 4.h,
+                          width: 0.5.w,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
+                        padding:  EdgeInsets.only(left: 2.w),
                         child: Column(
                           children: [
                             Text(
                               "sunset",
                               style: TextStyle(
-                                fontSize: height * 0.017,
-                                color: Colors.amber,
+                                fontSize: 10.sp,
+                                color: Colors.amber.shade200,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 10.0),
+                              padding: EdgeInsets.only(top: 2.h),
                               child: Text(
                                 sunset,
                                 style: TextStyle(
-                                  fontSize: height * 0.016,
+                                  fontSize: 10.sp,
                                   color: Colors.white,
                                 ),
                               ),
@@ -506,30 +507,30 @@ class _HomeScreenState extends State<HomeScreen>
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10),
+                        padding:  EdgeInsets.only(left:2.w),
                         child: Container(
                           color: Colors.white24,
-                          height: 30,
-                          width: 2,
+                          height: 4.h,
+                          width: 0.5.w,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
+                        padding:  EdgeInsets.only(left: 2.w),
                         child: Column(
                           children: [
                             Text(
                               "humidity",
                               style: TextStyle(
-                                fontSize: height * 0.017,
-                                color: Colors.amber,
+                                fontSize: 10.sp,
+                                color: Colors.amber.shade200,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 10.0),
+                              padding: EdgeInsets.only(top: 2.h),
                               child: Text(
                                 "${currentCityEntity.main!.humidity!}%",
                                 style: TextStyle(
-                                  fontSize: height * 0.016,
+                                  fontSize: 10.sp,
                                   color: Colors.white,
                                 ),
                               ),
@@ -540,8 +541,8 @@ class _HomeScreenState extends State<HomeScreen>
                     ],
                   ),
 
-                  SizedBox(
-                    height: 30,
+                   SizedBox(
+                    height: 3.h,
                   ),
                 ],
               ));
