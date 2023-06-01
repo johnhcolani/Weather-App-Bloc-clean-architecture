@@ -8,11 +8,11 @@ class AppBackground{
     DateTime now = DateTime.now();
     String formattedDate = DateFormat('kk').format(now);
     if(6 > int.parse(formattedDate)){
-      return AssetImage('assets/images/nightpic.jpg');
+      return const AssetImage('assets/images/night_pic.jpg');
     }else if(18 > int.parse(formattedDate)){
-      return AssetImage('assets/images/pic_bg.jpg');
+      return const AssetImage('assets/images/day_pics.png');
     }else{
-      return AssetImage('assets/images/nightpic.jpg');
+      return const AssetImage('assets/images/night_pic.jpg');
     }
   }
 

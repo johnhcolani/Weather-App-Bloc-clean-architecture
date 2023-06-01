@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-
 import '../../../../core/params/ForecastParams.dart';
 import '../../../../core/utils/date_converter.dart';
 import '../../../../core/widgets/app_background.dart';
@@ -76,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen>
                       },
                       controller: textEditingController,
                       style: DefaultTextStyle.of(context).style.copyWith(
-                            fontSize: 20,
+                            fontSize: 12.sp,
                             color: Colors.white,
                           ),
                       decoration: const InputDecoration(
@@ -202,11 +199,11 @@ class _HomeScreenState extends State<HomeScreen>
                             return Column(
                               children: [
                                 Padding(
-                                  padding:  EdgeInsets.only(top: 3.h),
+                                  padding: EdgeInsets.only(top: 3.h),
                                   child: Text(
                                     currentCityEntity.name!,
-                                    style:  TextStyle(
-                                        fontSize: 30.sp, color: Colors.white),
+                                    style: TextStyle(
+                                        fontSize: 25.sp, color: Colors.white),
                                   ),
                                 ),
                                 Padding(
@@ -214,11 +211,12 @@ class _HomeScreenState extends State<HomeScreen>
                                   child: Text(
                                     currentCityEntity.weather![0].description!,
                                     style: TextStyle(
-                                        fontSize: 15.sp, color: Colors.amber.shade200),
+                                        fontSize: 15.sp,
+                                        color: Colors.amber.shade200),
                                   ),
                                 ),
                                 Padding(
-                                  padding:  EdgeInsets.only(top: 2.h),
+                                  padding: EdgeInsets.only(top: 2.h),
                                   child: AppBackground.setIconForMain(
                                       currentCityEntity
                                           .weather![0].description!),
@@ -227,11 +225,11 @@ class _HomeScreenState extends State<HomeScreen>
                                   padding: EdgeInsets.only(top: 2.h),
                                   child: Text(
                                     "${currentCityEntity.main!.temp!.round()}\u00B0",
-                                    style:  TextStyle(
+                                    style: TextStyle(
                                         fontSize: 45.sp, color: Colors.white),
                                   ),
                                 ),
-                                 SizedBox(
+                                SizedBox(
                                   height: 2.h,
                                 ),
                                 Row(
@@ -247,7 +245,7 @@ class _HomeScreenState extends State<HomeScreen>
                                             color: Colors.amber.shade200,
                                           ),
                                         ),
-                                         SizedBox(
+                                        SizedBox(
                                           height: 1.h,
                                         ),
                                         Text(
@@ -262,7 +260,7 @@ class _HomeScreenState extends State<HomeScreen>
 
                                     /// divider
                                     Padding(
-                                      padding:  EdgeInsets.only(
+                                      padding: EdgeInsets.only(
                                         left: 2.w,
                                         right: 2.w,
                                       ),
@@ -276,19 +274,19 @@ class _HomeScreenState extends State<HomeScreen>
                                     /// min temp
                                     Column(
                                       children: [
-                                         Text(
+                                        Text(
                                           "min",
                                           style: TextStyle(
                                             fontSize: 13.sp,
                                             color: Colors.amber.shade200,
                                           ),
                                         ),
-                                         SizedBox(
+                                        SizedBox(
                                           height: 1.h,
                                         ),
                                         Text(
                                           "${currentCityEntity.main!.tempMin!.round()}\u00B0",
-                                          style:  TextStyle(
+                                          style: TextStyle(
                                             fontSize: 13.sp,
                                             color: Colors.white,
                                           ),
@@ -319,7 +317,7 @@ class _HomeScreenState extends State<HomeScreen>
                       controller: _pageController,
                       // PageController
                       count: 2,
-                      effect:  ExpandingDotsEffect(
+                      effect: ExpandingDotsEffect(
                         dotWidth: 3.w,
                         dotHeight: 1.h,
                         spacing: 5,
@@ -336,7 +334,7 @@ class _HomeScreenState extends State<HomeScreen>
 
                   /// divider
                   Padding(
-                    padding:  EdgeInsets.only(top: 3.h),
+                    padding: EdgeInsets.only(top: 3.h),
                     child: Container(
                       color: Colors.white24,
                       height: 0.2.h,
@@ -346,7 +344,7 @@ class _HomeScreenState extends State<HomeScreen>
 
                   /// forecast weather 7 days
                   Padding(
-                    padding:  EdgeInsets.only(top: 2.h),
+                    padding: EdgeInsets.only(top: 2.h),
                     child: SizedBox(
                       width: double.infinity,
                       height: 12.h,
@@ -405,7 +403,7 @@ class _HomeScreenState extends State<HomeScreen>
 
                   /// divider
                   Padding(
-                    padding:  EdgeInsets.only(top: 1.h),
+                    padding: EdgeInsets.only(top: 1.h),
                     child: Container(
                       color: Colors.white24,
                       height: 0.2.h,
@@ -431,7 +429,7 @@ class _HomeScreenState extends State<HomeScreen>
                             ),
                           ),
                           Padding(
-                            padding:  EdgeInsets.only(top: 2.h),
+                            padding: EdgeInsets.only(top: 2.h),
                             child: Text(
                               "${currentCityEntity.wind!.speed!} m/s",
                               style: TextStyle(
@@ -443,7 +441,7 @@ class _HomeScreenState extends State<HomeScreen>
                         ],
                       ),
                       Padding(
-                        padding:  EdgeInsets.only(left: 2.w),
+                        padding: EdgeInsets.only(left: 2.w),
                         child: Container(
                           color: Colors.white24,
                           height: 4.h,
@@ -451,7 +449,7 @@ class _HomeScreenState extends State<HomeScreen>
                         ),
                       ),
                       Padding(
-                        padding:  EdgeInsets.only(left: 2.w),
+                        padding: EdgeInsets.only(left: 2.w),
                         child: Column(
                           children: [
                             Text(
@@ -475,7 +473,7 @@ class _HomeScreenState extends State<HomeScreen>
                         ),
                       ),
                       Padding(
-                        padding:  EdgeInsets.only(left: 2.w),
+                        padding: EdgeInsets.only(left: 2.w),
                         child: Container(
                           color: Colors.white24,
                           height: 4.h,
@@ -483,7 +481,7 @@ class _HomeScreenState extends State<HomeScreen>
                         ),
                       ),
                       Padding(
-                        padding:  EdgeInsets.only(left: 2.w),
+                        padding: EdgeInsets.only(left: 2.w),
                         child: Column(
                           children: [
                             Text(
@@ -507,7 +505,7 @@ class _HomeScreenState extends State<HomeScreen>
                         ),
                       ),
                       Padding(
-                        padding:  EdgeInsets.only(left:2.w),
+                        padding: EdgeInsets.only(left: 2.w),
                         child: Container(
                           color: Colors.white24,
                           height: 4.h,
@@ -515,7 +513,7 @@ class _HomeScreenState extends State<HomeScreen>
                         ),
                       ),
                       Padding(
-                        padding:  EdgeInsets.only(left: 2.w),
+                        padding: EdgeInsets.only(left: 2.w),
                         child: Column(
                           children: [
                             Text(
@@ -541,7 +539,7 @@ class _HomeScreenState extends State<HomeScreen>
                     ],
                   ),
 
-                   SizedBox(
+                  SizedBox(
                     height: 3.h,
                   ),
                 ],

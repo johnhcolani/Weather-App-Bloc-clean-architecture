@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../feature_weather/presentation/bloc/home_bloc.dart';
 import '../../domain/entities/city_entity.dart';
@@ -46,16 +47,17 @@ class BookMarkScreen extends StatelessWidget {
             return SafeArea(
               child: Column(
                 children: [
-                  const Text(
+                   Text(
                     'WatchList',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 25,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(
-                    height: 20,
+                   SizedBox(
+                    height: 2.h,
                   ),
+
                   Expanded(
                     /// show text in center if there is no city bookmarked
                     child: (cities.isEmpty)

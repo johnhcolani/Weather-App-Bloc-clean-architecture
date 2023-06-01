@@ -13,3 +13,5 @@ class LoadFwEvent extends HomeEvent {
   final ForecastParams forecastParams;
   LoadFwEvent(this.forecastParams);
 }
+
+

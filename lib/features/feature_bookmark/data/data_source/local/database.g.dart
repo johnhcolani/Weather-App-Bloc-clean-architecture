@@ -63,8 +63,11 @@ class _$AppDatabase extends AppDatabase {
 
   CityDao? _cityDaoInstance;
 
-  Future<sqflite.Database> open(String path, List<Migration> migrations,
-      [Callback? callback]) async {
+  Future<sqflite.Database> open(
+    String path,
+    List<Migration> migrations, [
+    Callback? callback,
+  ]) async {
     final databaseOptions = sqflite.OpenDatabaseOptions(
       version: 1,
       onConfigure: (database) async {
@@ -97,8 +100,10 @@ class _$AppDatabase extends AppDatabase {
 }
 
 class _$CityDao extends CityDao {
-  _$CityDao(this.database, this.changeListener)
-      : _queryAdapter = QueryAdapter(database),
+  _$CityDao(
+    this.database,
+    this.changeListener,
+  )   : _queryAdapter = QueryAdapter(database),
         _cityInsertionAdapter = InsertionAdapter(database, 'City',
             (City item) => <String, Object?>{'id': item.id, 'name': item.name});
 

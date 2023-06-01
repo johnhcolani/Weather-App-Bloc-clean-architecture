@@ -14,7 +14,7 @@ class DateConverter{
   }
 
   /// change dt to our dateFormat ---5:55 AM/PM--- for Example
-  static String changeDtToDateTimeHour(dt, timeZone){
+  static String changeDtToDateTimeHour(dt,timeZone){
     final formatter = DateFormat.jm();
     return formatter.format(
         DateTime.fromMillisecondsSinceEpoch(

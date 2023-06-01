@@ -1,12 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_app_clean_bloc/features/feature_weather/presentation/bloc/unit_status.dart';
 
 
 import '../../../../core/params/ForecastParams.dart';
 import '../../../../core/resources/data_state.dart';
 import '../../domain/use_cases/get_current_weather_usecase.dart';
 import '../../domain/use_cases/get_forecast_weather_usecase.dart';
+import '../../domain/use_cases/get_unit_usecase.dart';
 import 'cw_status.dart';
 import 'fw_status.dart';
 
@@ -17,8 +19,17 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final GetCurrentWeatherUseCase getCurrentWeatherUseCase;
   final GetForecastWeatherUseCase _getForecastWeatherUseCase;
 
-  HomeBloc(this.getCurrentWeatherUseCase, this._getForecastWeatherUseCase)
-      : super(HomeState(cwStatus: CwLoading(), fwStatus: FwLoading())) {
+
+  HomeBloc(
+      this.getCurrentWeatherUseCase,
+      this._getForecastWeatherUseCase,
+      )
+      : super(HomeState(
+      cwStatus: CwLoading(),
+      fwStatus: FwLoading(),
+
+
+  )) {
     on<LoadCwEvent>((event, emit) async {
       emit(state.copyWith(newCwStatus: CwLoading()));
 
@@ -51,5 +62,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         emit(state.copyWith(newFwStatus: FwError(dataState.error)));
       }
     });
+
+
   }
 }

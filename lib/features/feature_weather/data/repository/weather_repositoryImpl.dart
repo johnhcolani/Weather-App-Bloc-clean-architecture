@@ -1,5 +1,6 @@
 
 import 'package:dio/dio.dart';
+import 'package:weather_app_clean_bloc/features/feature_weather/domain/entities/current_unit_entity.dart';
 
 import '../../../../core/params/ForecastParams.dart';
 import '../../../../core/resources/data_state.dart';
@@ -62,4 +63,6 @@ class WeatherRepositoryImpl extends WeatherRepository{
     return suggestCityEntity.data!;
 
   }
+
+
 }

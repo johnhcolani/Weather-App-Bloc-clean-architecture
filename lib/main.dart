@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:weather_app_clean_bloc/core/widgets/main_wrapper.dart';
 import 'package:weather_app_clean_bloc/features/feature_weather/presentation/bloc/home_bloc.dart';
 import 'package:weather_app_clean_bloc/locator.dart';
@@ -15,14 +16,16 @@ void main() async {
 
       Sizer(
         builder: (context, orientation, deviceType) {
-          return MaterialApp(
+          return AnnotatedRegion<SystemUiOverlayStyle>(
+              value: SystemUiOverlayStyle.light,
+              child:MaterialApp(
             theme: ThemeData.dark().copyWith(),
             debugShowCheckedModeBanner: false,
             home: MultiBlocProvider(providers: [
               BlocProvider(create: (_) => locator<HomeBloc>()),
               BlocProvider(create: (_) => locator<BookmarkBloc>()),
             ], child: MainWrapper()),
-          );
+          ));
 
         },
 
