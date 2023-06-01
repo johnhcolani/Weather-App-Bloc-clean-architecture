@@ -36,22 +36,22 @@ class _BottomNavState extends State<BottomNav> {
                 },
                 icon: const Icon(Icons.home)),
             //const SizedBox(),
-            TextButton(
-                onPressed: () {
-                  setState(() {
-                    if (textC == '\u00B0C' && apiProvider.unit == 'metric') {
-                      apiProvider.unit = 'imperial';
-                      textC = '\u00B0F';
-                    } else {
-                      textC = '\u00B0C';
-                      apiProvider.unit = 'metric';
-                    }
-                  });
-                },
-                child: Text(
-                  textC,
-                  style: TextStyle(fontSize: 16.sp, color: colour),
-                )),
+            // TextButton(
+            //     onPressed: () {
+            //       setState(() {
+            //         if (textC == '\u00B0C' && apiProvider.unit == 'metric') {
+            //           apiProvider.unit = 'imperial';
+            //           textC = '\u00B0F';
+            //         } else {
+            //           textC = '\u00B0C';
+            //           apiProvider.unit = 'metric';
+            //         }
+            //       });
+            //     },
+            //     child: Text(
+            //       textC,
+            //       style: TextStyle(fontSize: 16.sp, color: colour),
+            //     )),
 
             //const SizedBox(),
             IconButton(
