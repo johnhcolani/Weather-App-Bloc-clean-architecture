@@ -39,6 +39,23 @@ class ApiProvider {
     return response;
   }
 
+  // https://api.openweathermap.org/data/2.5/onecall&
+  /// all day time forecast api
+  Future<dynamic> sendRequestAllDayTimeForcast(ForecastParams params) async {
+    var response = await _dio.get(
+        "${Constants.baseUrl}/data/2.5/onecall",
+        queryParameters: {
+          'lat': params.lat,
+          'lon': params.lon,
+          'exclude': 'minutely,daily',
+          'appid': apiKey,
+          'units': unit
+        });
+
+    return response;
+  }
+
+
   /// city name suggest api
   Future<dynamic> sendRequestCitySuggestion(String prefix) async {
     var response = await _dio.get(

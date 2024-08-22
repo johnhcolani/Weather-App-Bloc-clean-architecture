@@ -34,6 +34,7 @@ setup() async {
   // use case
   locator.registerSingleton<GetCurrentWeatherUseCase>(GetCurrentWeatherUseCase(locator()));
   locator.registerSingleton<GetForecastWeatherUseCase>(GetForecastWeatherUseCase(locator()));
+
   locator.registerSingleton<SaveCityUseCase>(SaveCityUseCase(locator()));
   locator.registerSingleton<GetCityUseCase>(GetCityUseCase(locator()));
   locator.registerSingleton<GetAllCityUseCase>(GetAllCityUseCase(locator()));
