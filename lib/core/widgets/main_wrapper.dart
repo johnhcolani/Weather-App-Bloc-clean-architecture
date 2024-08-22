@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app_clean_bloc/core/widgets/splash_screen.dart';
 
 import '../../features/feature_bookmark/presentation/screens/bookmark_screen.dart';
 import '../../features/feature_weather/presentation/screens/home_screen.dart';
@@ -19,6 +20,7 @@ class MainWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
 
     List<Widget> pageViewWidget = [
+      //const SplashScreen(),
       const HomeScreen(),
       BookMarkScreen(pageController: pageController,),
     ];

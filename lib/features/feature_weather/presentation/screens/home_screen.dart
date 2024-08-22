@@ -199,7 +199,7 @@ class _HomeScreenState extends State<HomeScreen>
                             return Column(
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.only(top: 3.h),
+                                  padding: EdgeInsets.only(top: 2.h),
                                   child: Text(
                                     currentCityEntity.name!,
                                     style: TextStyle(
@@ -207,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.only(top: 2.h),
+                                  padding: EdgeInsets.only(top: 1.h),
                                   child: Text(
                                     currentCityEntity.weather![0].description!,
                                     style: TextStyle(
@@ -222,7 +222,7 @@ class _HomeScreenState extends State<HomeScreen>
                                           .weather![0].description!),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.only(top: 2.h),
+                                  padding: EdgeInsets.only(top: 1.h),
                                   child: Text(
                                     "${currentCityEntity.main!.temp!.round()}\u00B0",
                                     style: TextStyle(
@@ -230,7 +230,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 2.h,
+                                  height: 1.h,
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -524,7 +524,7 @@ class _HomeScreenState extends State<HomeScreen>
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: 2.h),
+                              padding: EdgeInsets.only(top: 1.h),
                               child: Text(
                                 "${currentCityEntity.main!.humidity!}%",
                                 style: TextStyle(
@@ -540,7 +540,7 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
 
                   SizedBox(
-                    height: 3.h,
+                    height: 4.h,
                   ),
                 ],
               ));

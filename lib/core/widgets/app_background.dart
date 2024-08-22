@@ -35,7 +35,7 @@ class AppBackground{
     } else if (description.contains("snow")) {
       return Image(image: AssetImage('assets/images/icons8-snow-80.png'));
     } else {
-      return Image(image: AssetImage('assets/images/icons8-windy-weather-80.png'));
+      return Image(image: AssetImage('assets/images/icons8-windy-80.png'));
     }
   }
 
